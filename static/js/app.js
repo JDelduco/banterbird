@@ -1,16 +1,36 @@
 const username = "admin";
 
 function renderPost(post) {
-    const template = document.getElementById("post-template").content.cloneNode(true);
-    template.querySelector(".username").innerText = post.username;
-    template.querySelector(".message").innerText = post.message;
-    document.getElementById("feed").appendChild(template);
+  const template = document
+    .getElementById("post-template")
+    .content.cloneNode(true);
+  template.querySelector(".username").innerText = post.username;
+  template.querySelector(".message").innerText = post.message;
+  document.getElementById("feed").appendChild(template);
 }
 
 function submitPost() {
-    const message = document.getElementById("postInput").value;
-    console.log("Would post:", message);
-    alert("Tweet submitted (not really yet)");
+  const message = document.getElementById("postInput").value;
+  try {
+    const response = await fetch("/api/posts", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+            username: username,
+            message: message,
+        }),
+    });
+    if (response.ok) {
+        renderPost({ username: username, message: message})
+        document.getElementById("postInput").value = ""; 
+    }
+
+  }
+  catch (error) {
+    console.error("Error Submitting Post: ", error)
+  }
 }
 
 window.onload = async () => {
@@ -23,3 +43,4 @@ window.onload = async () => {
     }
     
 };
+
