@@ -1,0 +1,43 @@
+/* style.css */
+
+body {
+    font-family: "Courier Bold", Courier, Georgia, Times;
+    padding: 20px;
+}
+
+h3 {
+    font-family: "Courier Bold", Courier, Georgia, Times, "Times New Roman", serif; 
+    font-size: 13px; 
+    font-weight: 400; 
+    line-height: 18px;
+
+}
+
+#feed {
+    margin-top: 30px;
+}
+
+textarea {
+    font-family: Rockwell, "Courier Bold", Courier, Georgia, Times;
+    text-emphasis-color: #000000 ;
+}
+
+#postButton {
+    color: #4587df;
+    background-color: #ffffff;
+    border:3px solid #4587df;
+    border-radius: 10px;
+}
+#postButton:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+    background-color: #b9b9b9;
+}
+
+#userDiplayed {
+    border: 2px solid #4587df;
+
+}
+
+#postName {
+    color: #4587df;
+}

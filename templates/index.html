@@ -1,18 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Jerrybird</title>
+    <title>JerryJabber</title>
+    <link rel="stylesheet" href="/static/css/style.css">
     <script src="/static/js/app.js" defer></script>
 </head>
 <body>
     <h1>Jerrybird</h1>
-    <div>
+    <div id="userDisplayed">
         Logged in as: <strong id="username">Jerry</strong>
     </div>
     <div>
         <h3>New Jerry</h3>
         <textarea id="postInput" placeholder="Type your Jerry here"></textarea><br>
-        <button onclick="submitPost()">Tweet</button>
+        <button id="postButton" onclick="submitPost()">Jabber</button>
     </div>
     <hr>
     <h3>Feed</h3>
@@ -20,7 +21,7 @@
 
     <template id="post-template">
         <div class="post">
-            <p><strong class="username"></strong>: <span class="message"></span></p>
+            <p><strong id="postName" class="username"></strong>: <span class="message"></span></p>
             <small class="timestamp"></small>
             <hr>
         </div>
