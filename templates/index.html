@@ -6,9 +6,10 @@
     <script src="/static/js/app.js" defer></script>
 </head>
 <body>
-    <h1>Jerrybird</h1>
+    <h1>JerryJabber</h1>
     <div id="userDisplayed">
-        Logged in as: <strong id="username">Jerry</strong>
+        <button id="postToLogin" onclick="loginPageButton()">To Login Page</button>
+        Logged in as: <strong id="username">Sigma</strong>
     </div>
     <div>
         <h3>New Jerry</h3>
@@ -26,5 +27,13 @@
             <hr>
         </div>
     </template>
+    <script>
+        document.getElementById("username").innerText = localStorage.getItem("username");
+        function loginPageButton() {
+            window.location.href = "/login"
+        }
+
+    </script>
+
 </body>
 </html>

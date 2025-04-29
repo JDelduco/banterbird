@@ -12,6 +12,11 @@ def get_posts():
     with (open("data.json", "r")) as file:
         posts = json.load(file)
     return jsonify(posts)
+
+@app.route("/login")
+def login(): 
+    return render_template("login.html")
+
     
 @app.route('/api/posts', methods=['POST'])
 def add_post():
